@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/**********************************************
+                Global styles
+**********************************************/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white: #ffffff;
+  --silver: #cccccc;
+  --grey: #333333;
+  --black: #000000;
+  --blue: #0d6efd;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #d63384;
+  --red: #dc3545;
+  --brown: #663300;
+  --orange: #fd7e14;
+  --gold: #ff9900;
+  --yellow: #ffc107;
+  --green: #198754;
+  --teal: #20c997;
+  --cyan: #0dcaf0;
+  --font-family: 'Poppins', sans-serif;
+  --font-size: 1rem;
+  --font-weight: 400;
+  --line-height: 1.5;
+  --body-color: var(--black);
+  --body-bg: var(--white);
+  --gutter-x: 1.5rem;
+  --gutter-y: 0;
+  --breakpoint-576: 576px;
+  --breakpoint-768: 768px;
+  --breakpoint-992: 992px;
+  --breakpoint-1200: 1200px;
+  --breakpoint-1400: 1400px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul li {
+  list-style: none;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  color: var(--black);
+  background: url(../img/main-bg.jpg) center/cover no-repeat;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+/**********************************************
+                    Layout
+**********************************************/
+.container-fluid {
+  width: 100%;
+}
+/**********************************************
+                Specific styles
+**********************************************/
+/* Header */
+.my-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 50px;
+  color: var(--silver);
+  background-color: var(--blue);
+}
+.logo {
+  margin: 0;
+  font-size: 1.5rem;
+  transition: 0.2s ease all;
+}
+.logo:hover {
+  transform: scale(1.01);
+  text-shadow: 1px 1px 1px var(--body-color);
+}
+/*************** MAIN *****************/
+.weather-holder {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 45vh auto 0;
+  transform: translateY(-50%);
+  box-shadow: 3px 3px 10px 3px var(--black);
+  border-radius: 10px;
+  background-color: rgba(0, 102, 255, 0.2);
+}
+.current-title {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  color: var(--silver);
+  text-align: center;
+  text-shadow: 3px 3px 5px #000;
+}
+.language-holder {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  width: 140px;
+  transform: translateX(-50%);
+  text-shadow: 3px 3px 5px #000;
+  text-align: center;
+}
+#language {
+  background-color: transparent;
+  border: none;
+}
+#language:focus {
+  outline: none;
+  background-color: var(--silver);
+}
+.units-holder {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  width: 150px;
+  transform: translateX(-50%);
+  text-shadow: 3px 3px 5px #000;
+  text-align: center;
+}
+#units {
+  background-color: transparent;
+  border: none;
+}
+#units:focus {
+  outline: none;
+  background-color: var(--silver);
+}
+.parameters {
+  display: flex;
+  justify-content: space-around;
+}
+.parameters .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
+  height: 30px;
+  margin-top: 20px;
+  font-weight: bold;
+
+}
+.parameters .fa-solid {
+  display: none;
+  font-size: 25px;
+  color: var(--white);
+}
+.parameters .box span {
+  margin-left: 5px;
+}
+.input-holder {
+  text-align: center;
+}
+#city-name {
+  width: 40%;
+  margin: 10px auto 0;
+  text-align: center;
+  color: var(--grey);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--silver);
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#city-name:focus {
+  outline: none;
+}
+#city-name::placeholder {
+  text-transform: none;
+  font-size: 14px;
+}
+.input-holder .fa-magnifying-glass {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+.city-holder {
+  height: 36px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--white);
+  text-shadow: 3px 3px 5px #000;
+  animation: flickering 2s ease 0s 1 normal forwards;
+}
+@keyframes flickering {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.degrees-holder {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  height: 80px;
+  margin: 10px auto 0;
+  color: var(--white);
+  text-shadow: 3px 3px 5px #000;
+}
+.degrees-holder img {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 102, 255, 0.4);
+  border-radius: 15px;
+}
+.degrees-holder h2 {
+  margin: 0;
+  font-size: 50px;
+  animation: flickering 2s ease 0s 1 normal forwards;
+}
+.description-holder {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--grey);
+}
+.min-max {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 20px;
+  margin: 10px auto 0;
+  font-weight: bold;
+}
+
+/* Footer */
+.my-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: var(--silver);
+  background-color: var(--blue);
+}
+.my-footer span {
+  text-shadow: 1px 1px 1px var(--body-color);
+}
+.my-footer span:hover {
+  color: var(--green);
+}
+/**********************************************
+                Helper classes
+**********************************************/
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.clearfix:before,
+.clearfix:after {
+  content: ' ';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*********************************************
+               @media Queries
+*********************************************/
+/* @media print {} */
+
+/* @media all and (min-width: var(--breakpoint-576)) {
+  } */

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/1bbe3cd657.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather App</title>
+    <meta name="description" content="My Project." />
+    <meta name="keywords" content="My, Project" />
+    <meta name="author" content="Goran Kekez" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Main Header -->
+    <header class="my-header">
+      <h1 class="logo"><a href="index.html">Weather App</a></h1>
+    </header>
+    <!-- Main Header END-->
+
+    <main>
+      <div class="container-fluid">
+        <div class="weather-holder">
+          <div class="current-title"><h4>Current Weather Data</h4></div>
+          <div class="language-holder">
+            <label for="language">Language:</label>
+            <select id="language" name="language">
+              <option value="en">EN</option>
+              <option value="sr">SR</option>
+              <option value="hu">HU</option>
+              <option value="de">DE</option>
+            </select>
+          </div>
+          <div class="units-holder">
+            <label for="units">Units:</label>
+            <select id="units" name="units">
+              <option value="metric">Celsius</option>
+              <option value="standard">Kelvin</option>
+              <option value="imperial">Fahrenheit</option>
+            </select>
+          </div>
+          <div class="parameters">
+            <div class="box cloudiness">
+              <i class="fa-solid fa-cloud"></i> <span></span>
+            </div>
+            <div class="box wind-speed">
+              <i class="fa-solid fa-wind"></i> <span></span>
+            </div>
+            <div class="box humidity">
+              <i class="fa-solid fa-droplet"></i> <span></span>
+            </div>
+          </div>
+          <div class="input-holder">
+            <input id="city-name" type="text" placeholder="Enter city name" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="city-holder">
+            <h2></h2>
+          </div>
+          <div class="degrees-holder"></div>
+          <div class="description-holder"></div>
+          <div class="min-max">
+            <div id="min"></div>
+            <div id="max"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="my-footer">
+      <small
+        >&copy; 2023 Weather App by
+        <a target="_blank" href="https://webdizajnmaxi.eu.org"
+          ><span>Maxi</span></a
+        >. All Rights Reserved.</small
+      >
+    </footer>
+    <!-- Main Footer END-->
+    <script src="js/APIcall.js"></script>
+    <script src="js/main.js"></script>
+    <noscript>JavaScript not enabled!</noscript>
+  </body>
+</html>
